@@ -1,0 +1,4 @@
+index.php (main page) : sign-in(if ok ref. to user home page),sin-up(refer to login.php),about(ref. to about.php).
+login.php (for new sign-up)
+about.php (intro)
+user.php (user home page)
