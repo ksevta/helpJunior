@@ -14,10 +14,12 @@
 <div id = "main">
 	<h1>helpJunior</h1>
 	<form action = "#login" id = "login">
-		Email or Phone &nbsp;&nbsp; Password<br>
-		<input type="text" name = "FirstName">&nbsp;&nbsp;
+		Email or Phone <br>
+		<input type="text" name = "FirstName"><br>
+		 Password<br>
 		<input type="text" name = "password"><br>
 		<input type = "submit" value = "Log In">
+		<button type="button">Sign Up</button>
 	</form>
 </div>
 <div id = "navbar">
