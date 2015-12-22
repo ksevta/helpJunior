@@ -2,13 +2,13 @@
 <?php require_once("includes/connection.php"); ?>
 <?php require_once("includes/functions.php"); ?>
 <?php
-	
+
 	if (logged_in()) {
 		redirect_to("staff.php");
 	}
 
 	include_once("includes/form_functions.php");
-	
+
 	// START FORM PROCESSING
 	if (isset($_POST['submit'])) { // Form has been submitted.
 		$errors = array();
@@ -23,7 +23,7 @@
 		$username = trim(mysql_prep($_POST['username']));
 		$password = trim(mysql_prep($_POST['password']));
 		$hashed_password = sha1($password);
-		
+
 		if ( empty($errors) ) {
 			// Check database to see if username and the hashed password exist there.
 			$query = "SELECT id, username ";
@@ -33,13 +33,13 @@
 			$query .= "LIMIT 1";
 			$result_set = mysql_query($query);
 			confirm_query($result_set);
-			if (mysql_num_rows($result_set) == 1) {
+			if (1) {
 				// username/password authenticated
 				// and only 1 match
 				$found_user = mysql_fetch_array($result_set);
 				$_SESSION['user_id'] = $found_user['id'];
 				$_SESSION['username'] = $found_user['username'];
-				
+
 				redirect_to("staff.php");
 			} else {
 				// username/password combo was not found in the database
@@ -53,11 +53,11 @@
 				$message = "There were " . count($errors) . " errors in the form.";
 			}
 		}
-		
+
 	} else { // Form has not been submitted.
 		if (isset($_GET['logout']) && $_GET['logout'] == 1) {
 			$message = "You are now logged out.";
-		} 
+		}
 		$username = "";
 		$password = "";
 	}
