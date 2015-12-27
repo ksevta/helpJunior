@@ -3,8 +3,7 @@ if user post... add teg ...then it is visible to all who authenticated for that 
 user :
 login,see content with his teg,post;
 login.php (sin-up or login both it will handle,about,home).
-user_content.php(afer login this is the main page of user ):
-user_tegs.php(show content teg wise);
+
 user.php
 
 
@@ -12,11 +11,17 @@ user.php
 
 
 
-
-
-
-
-index.php (main page) : sign-in(if ok ref. to user home page),sin-up(refer to login.php),about(ref. to about.php).
-
-about.php (intro)
-user.php (user home page)
+helpjunior -> 1. user ->
+						: username
+						: password
+						: branch
+						: basic details
+						......
+						
+			  2. public:
+						: branch
+						: faculty 
+						: courses 
+		
+review.php
+	: image or logo,name,				
