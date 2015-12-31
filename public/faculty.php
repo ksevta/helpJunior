@@ -39,8 +39,8 @@
       $curr_faculty = mysql_fetch_array($curr_faculty);
       echo "{$curr_faculty["faculty_name"]}";
       echo "<p>{$curr_faculty["faculty_branch"]}</p>";
-      echo "<img src =\"images/faculty/{$curr_faculty["faculty_id"]}.png\"";
-      echo "<br>";
+      echo "<img src =\"images/faculty/{$curr_faculty["faculty_id"]}.jpg\"";
+
 
       //get faculty review
       $curr_faculty_review = get_faculty_review($sel_faculty);
@@ -58,10 +58,11 @@
 
       // to add review
       ?>
+      <br>
       <form method = "post" >
-      <textarea name="new_review" rows="20" cols="6"><?php echo $faculty_review['f_review']; ?></textarea>
+      <textarea name="new_review" rows="5" cols="40"><?php echo $faculty_review['f_review']; ?></textarea>
       </p>
-      <input type = "submit" value="add review">
+      <input type = "submit" value="Comment">
     </ul>
 </body>
 </html>

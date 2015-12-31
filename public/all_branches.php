@@ -3,20 +3,31 @@
 
 <?php require_once("includes/session.php"); ?>
 <?php confirm_logged_in(); ?>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="stylesheets/all_.css">
 
-<?php
+</head>
+<body>
+  <?php
       // all branches
       echo "<a href=\"logout.php\">logout</a>";
       $branches_all = get_all_branches();
       echo "<div id = \"branches\">";
 
-      echo "<ul>";
+      echo "<div id = \"main\" >";
       while($branches = mysql_fetch_array($branches_all)){
-        echo "<li>";
+        echo "<div class=\"main_left\">";
+
         echo "<a href =\"branch.php?branch=" . urldecode($branches["branch_name"]) .
             "\"> {$branches{'branch_name'}} </a>";
-        echo "</li>";
+
+       echo "</div>";
+
       }
-      echo "</ul>";
       echo "</div>";
 ?>
+
+</body>
+</html>
